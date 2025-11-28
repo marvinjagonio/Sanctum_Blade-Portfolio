@@ -8,16 +8,22 @@ public class PlayerController : MonoBehaviour
     public InputActionAsset InputActions;
 
     private InputAction p_moveAction;
-    private Vector2 p_moveAmt;
+    public Vector2 p_moveAmt;
     private Vector3 velocity;
     private CharacterController p_Controller;
 
-    [SerializeField] private float walkSpeed = 5f;
+    [SerializeField] private float walkSpeed = 7f;
     [SerializeField] private float rotateSpeed = 2f;
     [SerializeField] private float jumpHeight = 2f;
     [SerializeField] private float gravity = -9.8f;
     [SerializeField] private bool shouldFaceMoveDirection = false;
     [SerializeField] Transform cameraTransform;
+
+    public Transform attackPoint;
+    public float attackRange = 0.5f;
+    public LayerMask enemyLayers;
+    public float attackRate = 2f;
+    public float nextAttackTime = 0f;
 
     private void OnEnable()
     {
@@ -42,6 +48,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         PlayerMovement();
+
     }
 
     private void PlayerMovement()
