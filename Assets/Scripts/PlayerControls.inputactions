@@ -121,15 +121,6 @@
             "id": "8e9b8cec-8b5a-49f2-8027-0ce00c6922bf",
             "actions": [
                 {
-                    "name": "MouseZoom",
-                    "type": "Value",
-                    "id": "0987490e-8b83-46dd-bafd-ff97cc534814",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
                     "name": "GamepadZoom",
                     "type": "Value",
                     "id": "74fcb2e5-0eaf-4de1-bed9-301c05b154dc",
@@ -140,17 +131,6 @@
                 }
             ],
             "bindings": [
-                {
-                    "name": "",
-                    "id": "dcf0fdf8-2374-496c-b7fb-56b0bcb4f103",
-                    "path": "<Mouse>/scroll",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "MouseZoom",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
                 {
                     "name": "1D Axis",
                     "id": "57464b79-a831-42ee-b972-20891817f4f5",

@@ -24,9 +24,7 @@ public class ThirdPersonCameraController : MonoBehaviour
     {
         controls = new PlayerControls();
         controls.Enable();
-        controls.CameraControls.MouseZoom.performed += HandleMouseScroll;
-
-        Cursor.lockState = CursorLockMode.Locked;
+        
 
         cam = GetComponent<CinemachineCamera>();
         orbital = GetComponent<CinemachineOrbitalFollow>();
@@ -34,22 +32,11 @@ public class ThirdPersonCameraController : MonoBehaviour
         targetZoom = currentZoom = orbital.Radius;
     }
 
-    private void HandleMouseScroll(InputAction.CallbackContext context)
-    {
-        scrollDelta = context.ReadValue<Vector2>();
-        Debug.Log($"Mouse is scrolling. Value: {scrollDelta}");
-    }
+   
     // Update is called once per frame
     void Update()
     {
-        if (scrollDelta.y != 0)
-        {
-            if (orbital != null)
-            {
-                targetZoom = Mathf.Clamp(orbital.Radius - scrollDelta.y * zoomSpeed, minDistance, maxDistance);
-                scrollDelta = Vector2.zero;
-            }
-        }
+       
 
         float bumperDelta = controls.CameraControls.GamepadZoom.ReadValue<float>();
         if (bumperDelta != 0)
